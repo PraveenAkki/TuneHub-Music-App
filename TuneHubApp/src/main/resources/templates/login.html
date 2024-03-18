@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Form Page</title>
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS -->
+    <link href="welcome.css" rel="stylesheet">
+</head>
+<body>
+	<h1>Welcome to TuneHub Application</h1>
+	<form action="/login" method="post">
+		<label for="emailId">Email ID:</label>
+		<input id="emailId" type="text" name="email" placeholder="Enter EmailID"/>
+		<br/><br/>
+		<label for="password">Password:</label>
+		<input id="password" type="password" name="password" placeholder="Enter Password"/>
+		<br/><br/>
+		<input type="submit" value="LOGIN"/>
+	</form>
+</body>
+</html>

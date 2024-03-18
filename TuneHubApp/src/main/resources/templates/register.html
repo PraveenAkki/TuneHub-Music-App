@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS -->
+    <link href="welcome.css" rel="stylesheet">
+</head>
+<body>
+<h1>Welcome to TuneHub Application</h1>
+	<form action="/register" method="post">
+		<label>User Name:</label> 
+		<input type="text" name="username" required/> 
+		<br/><br/>
+		<label>Email ID:</label> 
+		<input type="email" name="email" required/> 
+		<br/><br/>
+		<label>Password:</label> 
+		<input type="password" name="password" required/> 
+		<br/><br/>
+		<label>Gender:</label> 
+		Male<input type="radio" name="gender" value="male" /> 
+		Female<input type="radio" name="gender" value="female" /> 
+		Others<input type="radio" name="gender" value="other" />
+		<br/><br/> 
+		<label>Role:</label> 
+		Admin<input type="radio" name="role" value="admin" /> 
+		Customer<input type="radio" name="role" value="customer" /> 
+		<br/><br/>
+		<label>Address:</label>
+		<textarea name="address" required></textarea>
+		<br/><br/>
+		<input type="submit" value="REGISTER" />
+	</form>
+</body>
+</html>
