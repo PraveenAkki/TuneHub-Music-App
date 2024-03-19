@@ -34,9 +34,12 @@ public class UsersServiceImplementation implements UsersService
 	public boolean validateUser(String email, String password) {
 		
 		Users user = repo.findByEmail(email);
-		
 		String db_password = user.getPassword();
-		if(db_password.equals(password))
+		String hash = this.bytesToHex(password.getBytes());
+		System.out.println(hash);
+		System.out.println(db_password);
+		
+		if(db_password.equals(hash))
 		{
 			return true; 
 		}
@@ -59,6 +62,19 @@ public class UsersServiceImplementation implements UsersService
 	public void updateUser(Users user) {
 		repo.save(user);
 		
+	}
+	
+	@Override
+	public  String bytesToHex(byte[] hash) {
+	    StringBuilder hexString = new StringBuilder(2 * hash.length);
+	    for (int i = 0; i < hash.length; i++) {
+	        String hex = Integer.toHexString(0xff & hash[i]);
+	        if(hex.length() == 1) {
+	            hexString.append('0');
+	        }
+	        hexString.append(hex);
+	    } 
+	    return hexString.toString();
 	}
 
 }

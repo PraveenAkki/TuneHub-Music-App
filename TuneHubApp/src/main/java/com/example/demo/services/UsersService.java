@@ -15,4 +15,6 @@ public interface UsersService
 	public Users getUser(String email);
 
 	public void updateUser(Users user);
+	
+	public  String bytesToHex(byte[] hash);
 }

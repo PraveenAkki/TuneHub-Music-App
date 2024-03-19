@@ -36,6 +36,10 @@ public class UsersController
 		
 		if(userstatus == false)
 		{ 
+			byte[] hashPass = user.getPassword().getBytes();
+			String hash= userv.bytesToHex(hashPass);
+			user.setPassword(hash);
+			
 			userv.addUser(user);
 			return "registersuccess";
 		}
